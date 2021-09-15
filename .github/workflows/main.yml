@@ -7,6 +7,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    - name: Build PDF
+    - name: Build/Compile
       id: build
       run: make
