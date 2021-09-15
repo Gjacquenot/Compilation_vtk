@@ -20,6 +20,8 @@ RUN wget https://www.vtk.org/files/release/9.0/VTK-9.0.3.tar.gz -O vtk_src.tar.g
  && cmake ../vtk_src \
     -D CMAKE_BUILD_TYPE=Release \
     -D BUILD_SHARED_LIBS:BOOL=OFF \
+    -D VTK_BUILD_EXAMPLES:BOOL=OFF \
+    -D VTK_ENABLE_WRAPPING:BOOL=OFF \
     -D VTK_WRAP_PYTHON:BOOL=OFF \
     -D VTK_WRAP_JAVA:BOOL=OFF \
     -D VTK_USE_X:BOOL=OFF \
