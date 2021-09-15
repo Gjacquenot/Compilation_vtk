@@ -17,7 +17,7 @@ RUN wget --quiet https://gitlab.freedesktop.org/mesa/mesa/-/archive/mesa-21.1.8/
  && tar -xzf mesa_src.tar.gz --strip 1 -C mesa_src \
  && mkdir -p mesa_build \
  && cd mesa_build \
- && meson ../mesa_src
+ && meson ../mesa_src configure
 
 RUN wget --quiet https://www.vtk.org/files/release/9.0/VTK-9.0.3.tar.gz -O vtk_src.tar.gz \
  && mkdir -p vtk_src \
