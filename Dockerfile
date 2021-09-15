@@ -12,6 +12,13 @@ RUN apt-get update -yq \
         wget \
         meson
 
+RUN wget https://gitlab.freedesktop.org/mesa/mesa/-/archive/mesa-21.1.8/mesa-mesa-21.1.8.tar.gz -O mesa_src.tar.gz \
+ && mkdir -p mesa_src \
+ && tar -xzf mesa_src.tar.gz --strip 1 -C mesa_src \
+ && mkdir -p mesa_build \
+ && cd mesa_build \
+ && meson ../mesa_src
+
 RUN wget https://www.vtk.org/files/release/9.0/VTK-9.0.3.tar.gz -O vtk_src.tar.gz \
  && mkdir -p vtk_src \
  && tar -xzf vtk_src.tar.gz --strip 1 -C vtk_src \
@@ -31,7 +38,7 @@ RUN wget https://www.vtk.org/files/release/9.0/VTK-9.0.3.tar.gz -O vtk_src.tar.g
     -D OSMESA_INCLUDE_DIR=/usr/include \
     -D OSMESA_LIBRARY=/usr/lib/libOSMesa.so \
     -D CMAKE_INSTALL_PREFIX=/usr \
- && make  \
+ && make -j \
  && cd .. \
  && rm -rf vtk_src.tar.gz \
  && cd vtk_src \
