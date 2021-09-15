@@ -6,6 +6,7 @@ RUN apt-get update -yq \
         ca-certificates \
         git \
         cmake \
+        make \
         gcc \
         g++ \
         wget
