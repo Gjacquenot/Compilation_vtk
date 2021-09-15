@@ -9,7 +9,8 @@ RUN apt-get update -yq \
         make \
         gcc \
         g++ \
-        wget
+        wget \
+        meson
 
 RUN wget https://www.vtk.org/files/release/9.0/VTK-9.0.3.tar.gz -O vtk_src.tar.gz \
  && mkdir -p vtk_src \
