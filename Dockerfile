@@ -10,7 +10,7 @@ RUN apt-get update -yq \
         gcc \
         g++ \
         wget \
-        meson python3 python3-setuptools python3-mako pkg-config
+        meson python3 python3-setuptools python3-mako pkg-config zlib
 
 RUN wget --quiet https://gitlab.freedesktop.org/mesa/mesa/-/archive/mesa-21.1.8/mesa-mesa-21.1.8.tar.gz -O mesa_src.tar.gz \
  && mkdir -p mesa_src \
