@@ -4,4 +4,7 @@ RUN apt-get update -yq \
         --yes \
         --no-install-recommends \
         ca-certificates \
-        git
+        git \
+        cmake \
+        gcc \
+        g++
